@@ -47,7 +47,7 @@ class MeilisearchQueryCollection extends MeilisearchCollection
 
         $this->data = collect(array_map(function ($item) {
             return MeilisearchDocument::fromArray($item);
-        }, $hits));
+        }, $hits ?? []));
     }
 
     public function castAs(string $class): self
